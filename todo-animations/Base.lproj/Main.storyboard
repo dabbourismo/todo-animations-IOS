@@ -23,15 +23,15 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="sectionIndexTrackingBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="50" id="m7I-St-tfi">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="50"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="90" id="m7I-St-tfi">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m7I-St-tfi" id="Add-ww-3O5">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To Do Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Egs-JU-eS1">
-                                                    <rect key="frame" x="20" y="15" width="82" height="21"/>
+                                                    <rect key="frame" x="20" y="15" width="82" height="61"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -54,15 +54,24 @@
                                                     </constraints>
                                                     <state key="normal" backgroundImage="ShareButton"/>
                                                 </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQD-YA-Di4" userLabel="Complete">
+                                                    <rect key="frame" x="312" y="48" width="97" height="33"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="33" id="VG2-eu-QOp"/>
+                                                        <constraint firstAttribute="width" constant="97" id="nRg-n9-vhn"/>
+                                                    </constraints>
+                                                    <state key="normal" backgroundImage="CompleteButton"/>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Egs-JU-eS1" firstAttribute="top" secondItem="Add-ww-3O5" secondAttribute="topMargin" constant="4" id="5lv-p1-hT0"/>
-                                                <constraint firstAttribute="bottom" secondItem="TtJ-Qd-YpU" secondAttribute="bottom" constant="8" id="91d-8o-cL2"/>
+                                                <constraint firstAttribute="trailing" secondItem="mQD-YA-Di4" secondAttribute="trailing" constant="5" id="aDl-2C-2XS"/>
                                                 <constraint firstItem="E0T-MD-gQX" firstAttribute="top" secondItem="Add-ww-3O5" secondAttribute="top" constant="9" id="cZB-F9-cAX"/>
                                                 <constraint firstItem="TtJ-Qd-YpU" firstAttribute="leading" secondItem="E0T-MD-gQX" secondAttribute="trailing" constant="4" id="evo-ZR-Alb"/>
                                                 <constraint firstAttribute="trailing" secondItem="TtJ-Qd-YpU" secondAttribute="trailing" constant="5" id="g4K-1D-eta"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Egs-JU-eS1" secondAttribute="bottom" constant="3" id="ioM-wP-Tm6"/>
                                                 <constraint firstItem="TtJ-Qd-YpU" firstAttribute="top" secondItem="Add-ww-3O5" secondAttribute="top" constant="9" id="oAl-Uw-b0b"/>
+                                                <constraint firstAttribute="bottom" secondItem="mQD-YA-Di4" secondAttribute="bottom" constant="9" id="pM6-Bu-SZh"/>
                                                 <constraint firstItem="Egs-JU-eS1" firstAttribute="leading" secondItem="Add-ww-3O5" secondAttribute="leadingMargin" id="yVw-mO-IIe"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -175,6 +184,7 @@
     </scenes>
     <resources>
         <image name="AddButton" width="249" height="249"/>
+        <image name="CompleteButton" width="185" height="64"/>
         <image name="DeleteButton" width="185" height="64"/>
         <image name="ShareButton" width="185" height="64"/>
         <namedColor name="MainBlueColor">

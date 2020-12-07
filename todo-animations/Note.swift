@@ -11,17 +11,18 @@ struct Note : Codable{
     var title:String
     var completed:Bool
     var createdAt:Date
-    var Id:UUID
+    var id:UUID
     
-    func saveItem() {
-        
+    public func saveItem() {
+        DataManager.save(self, with: id.uuidString)
     }
     
     func deleteItem() {
-        
+        DataManager.delete(id.uuidString)
     }
     
-    func markAsCompleted() {
-        
+     mutating func markAsCompleted() {
+        self.completed = true
+        DataManager.save(self, with: id.uuidString)
     }
 }

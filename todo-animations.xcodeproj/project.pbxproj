@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2D7A534B257EE13300B9B802 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A534A257EE13300B9B802 /* Note.swift */; };
 		2D7A534E257EE20A00B9B802 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A534D257EE20A00B9B802 /* DataManager.swift */; };
+		2D7A5351257EF1E400B9B802 /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7A5350257EF1E400B9B802 /* NoteTableViewCell.swift */; };
 		2DF5B931257E807A002595F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF5B930257E807A002595F0 /* AppDelegate.swift */; };
 		2DF5B933257E807A002595F0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF5B932257E807A002595F0 /* SceneDelegate.swift */; };
 		2DF5B935257E807A002595F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF5B934257E807A002595F0 /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		2D7A534A257EE13300B9B802 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		2D7A534D257EE20A00B9B802 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		2D7A5350257EF1E400B9B802 /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
 		2DF5B92D257E807A002595F0 /* todo-animations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "todo-animations.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DF5B930257E807A002595F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DF5B932257E807A002595F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				2DF5B934257E807A002595F0 /* ViewController.swift */,
 				2DF5B936257E807A002595F0 /* Main.storyboard */,
 				2D7A534A257EE13300B9B802 /* Note.swift */,
+				2D7A5350257EF1E400B9B802 /* NoteTableViewCell.swift */,
 				2D7A534D257EE20A00B9B802 /* DataManager.swift */,
 				2DF5B939257E807D002595F0 /* Assets.xcassets */,
 				2DF5B93B257E807D002595F0 /* LaunchScreen.storyboard */,
@@ -148,6 +151,7 @@
 				2DF5B931257E807A002595F0 /* AppDelegate.swift in Sources */,
 				2DF5B933257E807A002595F0 /* SceneDelegate.swift in Sources */,
 				2D7A534B257EE13300B9B802 /* Note.swift in Sources */,
+				2D7A5351257EF1E400B9B802 /* NoteTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

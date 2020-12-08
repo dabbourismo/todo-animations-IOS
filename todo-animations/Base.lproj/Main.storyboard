@@ -18,12 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="619"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="V0B-Xh-vaf">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="V0B-Xh-vaf">
                                 <rect key="frame" x="0.0" y="44" width="414" height="575"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="sectionIndexTrackingBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="90" id="m7I-St-tfi">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="90" id="m7I-St-tfi" customClass="NoteTableViewCell" customModule="todo_animations" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m7I-St-tfi" id="Add-ww-3O5">
@@ -44,15 +44,9 @@
                                                         <constraint firstAttribute="height" constant="33" id="nkK-h9-pRg"/>
                                                     </constraints>
                                                     <state key="normal" backgroundImage="DeleteButton"/>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E0T-MD-gQX" userLabel="Share">
-                                                    <rect key="frame" x="211" y="9" width="97" height="33"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="97" id="n2P-MD-fjD"/>
-                                                        <constraint firstAttribute="width" secondItem="E0T-MD-gQX" secondAttribute="height" multiplier="97:33" id="xbz-ie-YsX"/>
-                                                        <constraint firstAttribute="height" constant="33" id="xdq-4l-m9Y"/>
-                                                    </constraints>
-                                                    <state key="normal" backgroundImage="ShareButton"/>
+                                                    <connections>
+                                                        <action selector="deleteNote:" destination="m7I-St-tfi" eventType="touchUpInside" id="svu-Xu-5Yu"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQD-YA-Di4" userLabel="Complete">
                                                     <rect key="frame" x="312" y="48" width="97" height="33"/>
@@ -61,13 +55,14 @@
                                                         <constraint firstAttribute="width" constant="97" id="nRg-n9-vhn"/>
                                                     </constraints>
                                                     <state key="normal" backgroundImage="CompleteButton"/>
+                                                    <connections>
+                                                        <action selector="completeNote:" destination="m7I-St-tfi" eventType="touchUpInside" id="sUY-3K-XPf"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Egs-JU-eS1" firstAttribute="top" secondItem="Add-ww-3O5" secondAttribute="topMargin" constant="4" id="5lv-p1-hT0"/>
                                                 <constraint firstAttribute="trailing" secondItem="mQD-YA-Di4" secondAttribute="trailing" constant="5" id="aDl-2C-2XS"/>
-                                                <constraint firstItem="E0T-MD-gQX" firstAttribute="top" secondItem="Add-ww-3O5" secondAttribute="top" constant="9" id="cZB-F9-cAX"/>
-                                                <constraint firstItem="TtJ-Qd-YpU" firstAttribute="leading" secondItem="E0T-MD-gQX" secondAttribute="trailing" constant="4" id="evo-ZR-Alb"/>
                                                 <constraint firstAttribute="trailing" secondItem="TtJ-Qd-YpU" secondAttribute="trailing" constant="5" id="g4K-1D-eta"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Egs-JU-eS1" secondAttribute="bottom" constant="3" id="ioM-wP-Tm6"/>
                                                 <constraint firstItem="TtJ-Qd-YpU" firstAttribute="top" secondItem="Add-ww-3O5" secondAttribute="top" constant="9" id="oAl-Uw-b0b"/>
@@ -75,6 +70,9 @@
                                                 <constraint firstItem="Egs-JU-eS1" firstAttribute="leading" secondItem="Add-ww-3O5" secondAttribute="leadingMargin" id="yVw-mO-IIe"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lblNote" destination="Egs-JU-eS1" id="uOE-ab-6sZ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -96,7 +94,16 @@
                             <constraint firstItem="V0B-Xh-vaf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fLb-1f-Nq7"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="MY LIST" id="5Ra-oC-7cQ"/>
+                    <navigationItem key="navigationItem" title="MY LIST" id="5Ra-oC-7cQ">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="z71-WI-Cpp">
+                            <connections>
+                                <action selector="addNewNote:" destination="BYZ-38-t0r" id="daq-OH-fHp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tblNotes" destination="V0B-Xh-vaf" id="eHR-Qm-fcw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -186,7 +193,6 @@
         <image name="AddButton" width="249" height="249"/>
         <image name="CompleteButton" width="185" height="64"/>
         <image name="DeleteButton" width="185" height="64"/>
-        <image name="ShareButton" width="185" height="64"/>
         <namedColor name="MainBlueColor">
             <color red="0.0" green="0.82745098039215681" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

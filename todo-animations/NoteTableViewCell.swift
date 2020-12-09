@@ -10,6 +10,8 @@ import UIKit
 protocol NoteCellDelegate {
     func didRequestDelete(_ cell:NoteTableViewCell)
     func didRequestComplete(_ cell:NoteTableViewCell)
+    func didRequestShare(_ cell:NoteTableViewCell)
+    
 }
 
 class NoteTableViewCell: UITableViewCell {
@@ -28,6 +30,12 @@ class NoteTableViewCell: UITableViewCell {
             delegateObj.didRequestComplete(self)
         }
     }
+    @IBAction func shareNote(_ sender: Any) {
+        if let delegateObj = self.delegate {
+            delegateObj.didRequestShare(self)
+        }
+    }
+   
     
     @IBAction func deleteNote(_ sender: Any) {
         if let delegateObj = self.delegate {
@@ -38,7 +46,7 @@ class NoteTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+        self.contentView.backgroundColor = UIColor.white
     }
 
 }

@@ -18,20 +18,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="619"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="V0B-Xh-vaf">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="133" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="V0B-Xh-vaf">
                                 <rect key="frame" x="0.0" y="44" width="414" height="575"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="sectionIndexTrackingBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="90" id="m7I-St-tfi" customClass="NoteTableViewCell" customModule="todo_animations" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="90"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="133" id="m7I-St-tfi" customClass="NoteTableViewCell" customModule="todo_animations" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="133"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m7I-St-tfi" id="Add-ww-3O5">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="133"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To Do Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Egs-JU-eS1">
-                                                    <rect key="frame" x="20" y="15" width="82" height="61"/>
+                                                    <rect key="frame" x="20" y="15" width="82" height="104"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -49,7 +49,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQD-YA-Di4" userLabel="Complete">
-                                                    <rect key="frame" x="312" y="48" width="97" height="33"/>
+                                                    <rect key="frame" x="312" y="91" width="97" height="33"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="33" id="VG2-eu-QOp"/>
                                                         <constraint firstAttribute="width" constant="97" id="nRg-n9-vhn"/>
@@ -59,9 +59,25 @@
                                                         <action selector="completeNote:" destination="m7I-St-tfi" eventType="touchUpInside" id="sUY-3K-XPf"/>
                                                     </connections>
                                                 </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N0u-CH-rBV" userLabel="Share">
+                                                    <rect key="frame" x="312" y="50" width="97" height="33"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="97" id="1uj-di-2Xc"/>
+                                                        <constraint firstAttribute="height" constant="33" id="Qc1-8j-Ldy"/>
+                                                        <constraint firstAttribute="width" secondItem="N0u-CH-rBV" secondAttribute="height" multiplier="97:33" id="bqH-9D-4tv"/>
+                                                    </constraints>
+                                                    <state key="normal" backgroundImage="ShareButton"/>
+                                                    <connections>
+                                                        <action selector="deleteNote:" destination="m7I-St-tfi" eventType="touchUpInside" id="XSa-c1-ocl"/>
+                                                        <action selector="shareNote:" destination="m7I-St-tfi" eventType="touchUpInside" id="8JY-5j-q4d"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="N0u-CH-rBV" firstAttribute="width" secondItem="N0u-CH-rBV" secondAttribute="height" multiplier="97:33" id="59d-77-TGK"/>
                                                 <constraint firstItem="Egs-JU-eS1" firstAttribute="top" secondItem="Add-ww-3O5" secondAttribute="topMargin" constant="4" id="5lv-p1-hT0"/>
+                                                <constraint firstItem="N0u-CH-rBV" firstAttribute="top" secondItem="TtJ-Qd-YpU" secondAttribute="bottom" constant="8" symbolic="YES" id="EhE-a5-jzD"/>
+                                                <constraint firstAttribute="trailing" secondItem="N0u-CH-rBV" secondAttribute="trailing" constant="5" id="Xvb-EX-pml"/>
                                                 <constraint firstAttribute="trailing" secondItem="mQD-YA-Di4" secondAttribute="trailing" constant="5" id="aDl-2C-2XS"/>
                                                 <constraint firstAttribute="trailing" secondItem="TtJ-Qd-YpU" secondAttribute="trailing" constant="5" id="g4K-1D-eta"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Egs-JU-eS1" secondAttribute="bottom" constant="3" id="ioM-wP-Tm6"/>
@@ -95,6 +111,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="MY LIST" id="5Ra-oC-7cQ">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="square.and.arrow.up" catalog="system" style="plain" id="pxc-gY-Vwg">
+                            <connections>
+                                <action selector="showConnectivityAction:" destination="BYZ-38-t0r" id="cu0-xD-gH9"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="z71-WI-Cpp">
                             <connections>
                                 <action selector="addNewNote:" destination="BYZ-38-t0r" id="daq-OH-fHp"/>
@@ -102,6 +123,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="progressBar" destination="aCe-8U-1xv" id="Vgq-MA-XNS"/>
                         <outlet property="tblNotes" destination="V0B-Xh-vaf" id="eHR-Qm-fcw"/>
                     </connections>
                 </viewController>
@@ -109,10 +131,10 @@
             </objects>
             <point key="canvasLocation" x="589.85507246376812" y="83.559782608695656"/>
         </scene>
-        <!--View Controller-->
+        <!--Container View Controller-->
         <scene sceneID="RG2-rj-glw">
             <objects>
-                <viewController id="7w0-uW-KJT" sceneMemberID="viewController">
+                <viewController id="7w0-uW-KJT" customClass="ContainerViewController" customModule="todo_animations" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tx6-TC-7EN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -120,7 +142,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="gm0-yp-D8y">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="619"/>
                                 <connections>
-                                    <segue destination="T9X-Vs-jni" kind="embed" identifier="TodoVC" id="Sbw-fi-ItJ"/>
+                                    <segue destination="T9X-Vs-jni" kind="embed" identifier="containerTOviewController" id="Sbw-fi-ItJ"/>
                                 </connections>
                             </containerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connection" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4x-zZ-BbF">
@@ -135,6 +157,9 @@
                                 <state key="normal" title="Offline">
                                     <color key="titleColor" name="MainYellowColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="triggerConnection:" destination="7w0-uW-KJT" eventType="touchUpInside" id="2i4-ca-bIU"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rf5-1I-XbX">
                                 <rect key="frame" x="360" y="657" width="40" height="40"/>
@@ -147,6 +172,9 @@
                                 <state key="normal" title="+" backgroundImage="AddButton">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="addNewNote:" destination="7w0-uW-KJT" eventType="touchUpInside" id="tNa-mv-ztI"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Qys-d8-or9"/>
@@ -165,6 +193,11 @@
                             <constraint firstItem="Qys-d8-or9" firstAttribute="bottom" secondItem="b4x-zZ-BbF" secondAttribute="bottom" constant="42" id="xC6-pp-10k"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addButton" destination="rf5-1I-XbX" id="WYw-Ab-H1o"/>
+                        <outlet property="connectionButton" destination="TsA-1C-iGQ" id="h0l-04-xtv"/>
+                        <outlet property="containerView" destination="gm0-yp-D8y" id="4hn-lo-ae9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rYl-Qu-AHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -193,6 +226,8 @@
         <image name="AddButton" width="249" height="249"/>
         <image name="CompleteButton" width="185" height="64"/>
         <image name="DeleteButton" width="185" height="64"/>
+        <image name="ShareButton" width="185" height="64"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <namedColor name="MainBlueColor">
             <color red="0.0" green="0.82745098039215681" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
